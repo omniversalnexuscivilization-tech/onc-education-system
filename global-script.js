@@ -432,5 +432,28 @@ function getQueryParam(param) {
     return urlParams.get(param);
 }
 
+// Stories Tab Switching
+const storyTabBtns = document.querySelectorAll('.story-tab-btn');
+const storyTabContents = document.querySelectorAll('.story-tab-content');
+
+storyTabBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+        storyTabBtns.forEach(b => b.classList.remove('active'));
+        storyTabContents.forEach(c => c.classList.remove('active'));
+        
+        this.classList.add('active');
+        const tabId = this.getAttribute('data-story-tab');
+        document.getElementById(tabId).classList.add('active');
+    });
+});
+
+// Video Play Functionality
+document.querySelectorAll('.play-button').forEach(btn => {
+    btn.addEventListener('click', function() {
+        // Add video player modal logic here
+        alert('Video player coming soon!');
+    });
+});
+
 // ========== Export functions (if using modules) ==========
 // export { debounce, throttle, isInViewport, smoothScrollTo, formatNumber, copyToClipboard, getQueryParam };
