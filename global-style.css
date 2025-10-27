@@ -371,6 +371,18 @@ section {
     line-height: 1.8;
 }
 
+/* Philosophy Section */
+.philosophy-section { background: #f8f9fa; }
+.philosophy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+.philosophy-card { background: white; padding: 40px; border-radius: 20px; box-shadow: var(--shadow-md); }
+.philosophy-icon { width: 80px; height: 80px; background: var(--gradient-primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin-bottom: 20px; }
+
+/* Vision Section */
+.vision-content { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-bottom: 40px; }
+.vision-goals { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.vision-goal-card { background: var(--gradient-primary); color: white; padding: 30px; border-radius: 15px; text-align: center; }
+
+
 /* Pilot Section */
 .pilot-section {
     background: var(--light-color);
@@ -481,6 +493,14 @@ section {
 .mission-features i {
     color: var(--success-color);
 }
+
+/* Initiatives Section */
+.initiatives-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+.initiative-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-md); transition: var(--transition-fast); }
+.initiative-image { height: 250px; overflow: hidden; }
+.initiative-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+.initiative-card:hover .initiative-image img { transform: scale(1.1); }
+
 
 /* Framework Section */
 .framework-section {
@@ -663,6 +683,22 @@ section {
     color: var(--text-light);
     line-height: 1.6;
 }
+
+/* Resources Section */
+.resources-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+.resource-category { background: white; padding: 35px; border-radius: 20px; text-align: center; box-shadow: var(--shadow-md); }
+.resource-icon { width: 80px; height: 80px; background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); color: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin: 0 auto 20px; }
+
+/* Research Section */
+.research-categories { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 50px; }
+.research-cat-card { background: white; padding: 30px; border-radius: 15px; box-shadow: var(--shadow-sm); text-align: center; }
+
+/* Stories Section */
+.stories-tabs { display: flex; gap: 15px; margin-bottom: 40px; justify-content: center; }
+.story-tab-btn { padding: 15px 30px; background: white; border: 2px solid var(--border-color); border-radius: 50px; cursor: pointer; transition: var(--transition-fast); }
+.story-tab-btn.active { background: var(--gradient-primary); color: white; border-color: transparent; }
+.video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+
 
 /* Get Involved Section */
 .involved-section {
