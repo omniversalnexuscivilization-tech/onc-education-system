@@ -432,6 +432,57 @@ function getQueryParam(param) {
     return urlParams.get(param);
 }
 
+
+// Video Modal Functionality
+const playButtons = document.querySelectorAll('.play-button');
+const videoModal = document.getElementById('videoModal');
+const modalVideo = document.getElementById('modalVideo');
+const closeModal = document.querySelector('.video-close');
+
+playButtons.forEach(btn => {
+    btn.addEventListener('click', function() {
+        const videoSrc = this.getAttribute('data-video');
+        modalVideo.src = `assets/videos/${videoSrc}`;
+        videoModal.classList.add('show');
+        modalVideo.play();
+    });
+});
+
+closeModal.addEventListener('click', function() {
+    videoModal.classList.remove('show');
+    modalVideo.pause();
+    modalVideo.src = '';
+});
+
+window.addEventListener('click', function(e) {
+    if (e.target === videoModal) {
+        videoModal.classList.remove('show');
+        modalVideo.pause();
+        modalVideo.src = '';
+    }
+});
+
+// Gallery Filter
+const filterBtns = document.querySelectorAll('.filter-btn');
+const galleryItems = document.querySelectorAll('.gallery-item');
+
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        
+        const filter = this.getAttribute('data-filter');
+        
+        galleryItems.forEach(item => {
+            if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
+});
+
 // Stories Tab Switching
 const storyTabBtns = document.querySelectorAll('.story-tab-btn');
 const storyTabContents = document.querySelectorAll('.story-tab-content');
