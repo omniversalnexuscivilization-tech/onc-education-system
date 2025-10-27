@@ -1,675 +1,654 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Community Education Pilot – ONSNC Foundation</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Affordable, holistic education with Education 5.0 infrastructure for LP–ME–HS students." />
-  <link rel="stylesheet" href="common.css" />
-  <link rel="stylesheet" href="global-style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ONC Education - Omniversal Nexus Civilization Education 5.0. Scientific, inclusive, and innovative education ecosystem for holistic learner development.">
+    <meta name="keywords" content="Education 5.0, ONC Education, blockchain education, holistic learning, digital literacy">
+    <title>ONC Education 5.0 - Universal InnovaSphere Education for Nexus Civilization</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-    <div class="container header-inner">
-      <div class="brand">
-        <div class="brand-logo">ON</div>
-        <div class="brand-name">ONC Education 5.0</div>
-      </div>
-      <nav class="nav">
-        <a href="education.html" class="active">Education</a>
-        <a href="farming.html">Farming</a>
-        <a href="fishfarming.html">Fish Farming</a>
-        <a href="plantation.html">Plantation</a>
-        <a href="reports.html">Reports</a>
-        <a href="volunteer.html">Volunteer</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-      <button class="menu-btn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-      </button>
-    </div>
-    <nav class="mobile-nav">
-      <a href="education.html" class="active">Education</a>
-      <a href="farming.html">Farming</a>
-      <a href="fishfarming.html">Fish Farming</a>
-      <a href="plantation.html">Plantation</a>
-      <a href="reports.html">Reports</a>
-      <a href="volunteer.html">Volunteer</a>
-      <a href="contact.html">Contact</a>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="assets/logo.png" alt="ONC Education" class="logo" onerror="this.style.display='none'">
+                <span class="brand-text">ONC Education</span>
+            </div>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#mission">Mission</a></li>
+                <li><a href="#framework">Framework</a></li>
+                <li><a href="#pilot">Pilot Project</a></li>
+                <li><a href="#curriculum">Curriculum</a></li>
+                <li><a href="#get-involved">Get Involved</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </nav>
-  </header>
 
-  <!-- Subpage Hero Section -->
-  <section class="hero-sub">
-    <div class="container">
-      <div class="hero-content">
-        <h1>Community Education Pilot</h1>
-        <p class="hero-subtitle">Affordable, holistic education for LP–ME–HS students with <span class="highlight">Education 5.0</span> infrastructure: tuition, TLM models, yoga & self-defence, digital literacy, and spoken languages.</p>
-        <div class="meta-badges">
-          <span class="badge">📍 Location: Dhuli Moradiring</span>
-          <span class="badge">🎯 Goal: Model Education Village by 2026</span>
-          <span class="badge">👥 Students: 45+ enrolled</span>
-        </div>
-        <div class="cta-primary">
-          <a class="btn btn-primary" href="volunteer.html">Become a Mentor</a>
-          <a class="btn btn-secondary" href="reports.html">View Progress</a>
-          <a class="btn btn-ghost" href="contact.html">Get in Touch</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Objective Section -->
-  <section class="section objective-section">
-    <div class="container">
-      <h2>Our Mission & Objective</h2>
-      <p class="lead">We are building a <strong>scientifically-designed, inclusive education ecosystem</strong> that combines academic excellence with life skills, digital competence, and community engagement.</p>
-      <div class="grid cols-3">
-        <div class="objective-card">
-          <div class="icon-circle">🎓</div>
-          <h3>Academic Excellence</h3>
-          <p>Structured tutoring with evidence-based learning methods, project-based learning, and continuous formative assessment.</p>
-        </div>
-        <div class="objective-card">
-          <div class="icon-circle">🌍</div>
-          <h3>Digital Empowerment</h3>
-          <p>Online literacy, coding basics, digital citizenship, and technology-enabled learning resources for all.</p>
-        </div>
-        <div class="objective-card">
-          <div class="icon-circle">💪</div>
-          <h3>Holistic Growth</h3>
-          <p>Physical wellness, emotional intelligence, cultural awareness, and community contribution skills.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Education 5.0 Framework -->
-  <section class="section framework-section">
-    <div class="container">
-      <div class="section-header">
-        <h2>Education 5.0 Framework</h2>
-        <p>A scientific, integrated model addressing all dimensions of learner development</p>
-      </div>
-
-      <!-- Five Pillars -->
-      <div class="pillars-grid">
-        <div class="pillar-card">
-          <div class="pillar-number">1</div>
-          <h3>Universal Life Passport (ULP)</h3>
-          <p class="description">Digital lifelong identity tracking learning journey, skills, achievements, and contributions.</p>
-          <div class="feature-list">
-            <div class="feature">✓ Blockchain-based tamper-proof record</div>
-            <div class="feature">✓ Multi-dimensional achievement tracking</div>
-            <div class="feature">✓ Portable across schools & employers</div>
-            <div class="feature">✓ Integration with Aadhaar & DigiLocker</div>
-          </div>
-          <button class="btn-explore" onclick="expandPillar(1)">Explore More</button>
-        </div>
-
-        <div class="pillar-card">
-          <div class="pillar-number">2</div>
-          <h3>Universal Life Certificate (ULC)</h3>
-          <p class="description">Living, dynamic certificate that updates with new skills and achievements in real-time.</p>
-          <div class="feature-list">
-            <div class="feature">✓ Auto-updates with skill acquisitions</div>
-            <div class="feature">✓ Recognized by employers & institutions</div>
-            <div class="feature">✓ Cumulative learning progression</div>
-            <div class="feature">✓ Government interoperability ready</div>
-          </div>
-          <button class="btn-explore" onclick="expandPillar(2)">Explore More</button>
-        </div>
-
-        <div class="pillar-card">
-          <div class="pillar-number">3</div>
-          <h3>Metaphormic Badges</h3>
-          <p class="description">Gamified recognition system for skills, achievements, and community contributions with visual progression.</p>
-          <div class="feature-list">
-            <div class="feature">✓ 50+ achievement categories</div>
-            <div class="feature">✓ Skill-based & behavioral badges</div>
-            <div class="feature">✓ Shareable on social platforms</div>
-            <div class="feature">✓ Intrinsic motivation through recognition</div>
-          </div>
-          <button class="btn-explore" onclick="expandPillar(3)">Explore More</button>
-        </div>
-
-        <div class="pillar-card">
-          <div class="pillar-number">4</div>
-          <h3>DAO Village Council</h3>
-          <p class="description">Decentralized, community-driven governance with transparent, democratic decision-making.</p>
-          <div class="feature-list">
-            <div class="feature">✓ Smart contract-based decisions</div>
-            <div class="feature">✓ Student, parent, teacher voting rights</div>
-            <div class="feature">✓ Transparent fund allocation ledger</div>
-            <div class="feature">✓ Real-time community participation</div>
-          </div>
-          <button class="btn-explore" onclick="expandPillar(4)">Explore More</button>
-        </div>
-
-        <div class="pillar-card">
-          <div class="pillar-number">5</div>
-          <h3>Universal Holistic Assessment (UHA)</h3>
-          <p class="description">360° evaluation across academics, skills, health, community, and emotional intelligence dimensions.</p>
-          <div class="feature-list">
-            <div class="feature">✓ Multi-dimensional scoring rubrics</div>
-            <div class="feature">✓ Real-time progress tracking dashboards</div>
-            <div class="feature">✓ Competency-based assessment</div>
-            <div class="feature">✓ Parent & learner-visible analytics</div>
-          </div>
-          <button class="btn-explore" onclick="expandPillar(5)">Explore More</button>
-        </div>
-
-        <div class="pillar-card special-card">
-          <div class="pillar-number">⚙️</div>
-          <h3>Research & Innovation Lab</h3>
-          <p class="description">Continuous monitoring, evaluation, and refinement of educational methodologies using data science.</p>
-          <div class="feature-list">
-            <div class="feature">✓ Learning outcome analytics</div>
-            <div class="feature">✓ Evidence-based curriculum design</div>
-            <div class="feature">✓ AI-powered personalization engine</div>
-            <div class="feature">✓ Publication & peer review process</div>
-          </div>
-          <button class="btn-explore" onclick="expandPillar(6)">Explore More</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Program Components -->
-  <section class="section components-section">
-    <div class="container">
-      <div class="section-header">
-        <h2>Program Components & Curriculum</h2>
-        <p>Comprehensive offerings tailored for each age group (LP, ME, HS)</p>
-      </div>
-
-      <div class="tabs-container">
-        <div class="tabs">
-          <button class="tab-btn active" data-tab="academics">📚 Academics</button>
-          <button class="tab-btn" data-tab="skills">🎯 Life Skills</button>
-          <button class="tab-btn" data-tab="digital">💻 Digital</button>
-          <button class="tab-btn" data-tab="wellness">🧘 Wellness</button>
-        </div>
-
-        <!-- Academics Tab -->
-        <div class="tab-content active" id="academics">
-          <div class="grid cols-2">
-            <div class="component-card">
-              <h4>Academic Tuition</h4>
-              <p>Structured weekly sessions with evidence-based teaching methods, personalized learning paths, and formative assessment.</p>
-              <div class="pricing-table">
-                <div class="price-row">
-                  <span class="label">LP Classes (I–V)</span>
-                  <span class="value">₹200/month</span>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title animate-fade-in">Education 5.0</h1>
+            <p class="hero-subtitle animate-fade-in-delay">Universal InnovaSphere Education for Nexus Civilization 3.0</p>
+            <p class="hero-description animate-fade-in-delay-2">
+                A scientific, inclusive, and innovative education ecosystem combining academic excellence with life skills, digital competence, and community engagement
+            </p>
+            <div class="hero-buttons animate-fade-in-delay-3">
+                <a href="#pilot" class="btn btn-primary btn-large">
+                    <i class="fas fa-rocket"></i> View Pilot Project
+                </a>
+                <a href="#framework" class="btn btn-secondary btn-large">
+                    <i class="fas fa-book"></i> Explore Framework
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="45">0</span>
+                    <span class="stat-label">Students Enrolled</span>
                 </div>
-                <div class="price-row">
-                  <span class="label">ME Classes (VI–VIII)</span>
-                  <span class="value">₹300/month</span>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="6">0</span>
+                    <span class="stat-label">Core Components</span>
                 </div>
-                <div class="price-row">
-                  <span class="label">HS Classes (IX–X)</span>
-                  <span class="value">₹300/month</span>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="2026">2025</span>
+                    <span class="stat-label">Model Village Goal</span>
                 </div>
-                <div class="price-row highlight">
-                  <span class="label">Concession (BPL)</span>
-                  <span class="value">₹100/month</span>
-                </div>
-              </div>
-              <div class="highlight-box">
-                <strong>✓ Includes:</strong> Textbooks, notebooks, stationery, midday snacks
-              </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Community Pilot Section -->
+    <section class="pilot-section" id="pilot">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Current Project</span>
+                <h2>Community Education Pilot</h2>
+                <p class="section-description">
+                    Affordable, holistic education for all students with Education 5.0 infrastructure: tuition, TLM models, yoga & self-defence, digital literacy, and spoken languages.
+                </p>
             </div>
 
-            <div class="component-card">
-              <h4>Education 5.0 Methodology</h4>
-              <p>Universal Nexus framework integrating project-based learning, Teaching & Learning Materials (TLM), and real-world problem solving.</p>
-              <div class="methodology-list">
-                <div class="method-item">
-                  <span class="method-icon">🧩</span>
-                  <div>
-                    <strong>Project-Based Learning</strong>
-                    <p>Real-world challenges, STEM integration, community relevance</p>
-                  </div>
+            <div class="pilot-content">
+                <div class="pilot-info-grid">
+                    <div class="pilot-info-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Location</h3>
+                        <p>Dhuli Moradiring, Karbi Anglong, Assam</p>
+                    </div>
+                    <div class="pilot-info-card">
+                        <i class="fas fa-bullseye"></i>
+                        <h3>Goal</h3>
+                        <p>Model Education Village by 2026</p>
+                    </div>
+                    <div class="pilot-info-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Students</h3>
+                        <p>45+ enrolled and growing</p>
+                    </div>
+                    <div class="pilot-info-card">
+                        <i class="fas fa-calendar-check"></i>
+                        <h3>Status</h3>
+                        <p>Phase 1 - Active Implementation</p>
+                    </div>
                 </div>
-                <div class="method-item">
-                  <span class="method-icon">🎨</span>
-                  <div>
-                    <strong>TLM (Charts & Models)</strong>
-                    <p>Visual learning, hands-on activities, kinesthetic engagement</p>
-                  </div>
+
+                <div class="pilot-actions">
+                    <a href="#mentor" class="btn btn-primary">
+                        <i class="fas fa-chalkboard-teacher"></i> Become a Mentor
+                    </a>
+                    <a href="#progress" class="btn btn-outline">
+                        <i class="fas fa-chart-line"></i> View Progress
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        <i class="fas fa-envelope"></i> Get in Touch
+                    </a>
                 </div>
-                <div class="method-item">
-                  <span class="method-icon">📊</span>
-                  <div>
-                    <strong>Formative Assessment</strong>
-                    <p>Continuous feedback, competency tracking, adaptive learning</p>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
+    </section>
 
-        <!-- Life Skills Tab -->
-        <div class="tab-content" id="skills">
-          <div class="grid cols-2">
-            <div class="component-card">
-              <h4>Yoga & Physical Wellness</h4>
-              <p>Weekly sessions (90 mins) for physical health, mental focus, stress management, and confidence building.</p>
-              <div class="schedule">
-                <div class="schedule-item">
-                  <strong>Sessions/Week:</strong> 1 (90 minutes)
-                </div>
-                <div class="schedule-item">
-                  <strong>Focus Areas:</strong> Flexibility, breathing, posture, mindfulness
-                </div>
-                <div class="schedule-item">
-                  <strong>Benefits:</strong> ↓ Anxiety, ↑ Focus, ↑ Confidence, Better sleep
-                </div>
-              </div>
-            </div>
-
-            <div class="component-card">
-              <h4>Self-Defence & Safety</h4>
-              <p>Practical self-defence training for personal safety, confidence, and awareness with certified trainers.</p>
-              <div class="schedule">
-                <div class="schedule-item">
-                  <strong>Sessions/Week:</strong> 1 (60 minutes)
-                </div>
-                <div class="schedule-item">
-                  <strong>Focus Areas:</strong> Basic techniques, situational awareness, empowerment
-                </div>
-                <div class="schedule-item">
-                  <strong>Benefits:</strong> Confidence, Safety skills, Physical strength, Discipline
-                </div>
-              </div>
+    <!-- Mission & Objectives -->
+    <section class="mission-section" id="mission">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Purpose</span>
+                <h2>Mission & Objectives</h2>
+                <p class="section-description">
+                    Building a scientifically-designed, inclusive advanced innovative education ecosystem that combines academic excellence with life skills, digital competence, and community engagement
+                </p>
             </div>
 
-            <div class="component-card">
-              <h4>Spoken Language</h4>
-              <p>Interactive Hindi & English practice through storytelling, role-plays, debates, and real-world conversations.</p>
-              <div class="schedule">
-                <div class="schedule-item">
-                  <strong>Sessions/Week:</strong> 1 (120 minutes, Sunday)
+            <div class="mission-grid">
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Academic Excellence</h3>
+                    <p>Structured tutoring with evidence-based learning methods, project-based learning, and continuous formative assessment</p>
+                    <ul class="mission-features">
+                        <li><i class="fas fa-check"></i> Evidence-based pedagogy</li>
+                        <li><i class="fas fa-check"></i> Project-based learning</li>
+                        <li><i class="fas fa-check"></i> Continuous assessment</li>
+                        <li><i class="fas fa-check"></i> Personalized pathways</li>
+                    </ul>
                 </div>
-                <div class="schedule-item">
-                  <strong>Methods:</strong> Role-play, group discussions, storytelling, interviews
+
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Digital Empowerment</h3>
+                    <p>Online literacy, coding basics, digital citizenship, and technology-enabled learning resources for all</p>
+                    <ul class="mission-features">
+                        <li><i class="fas fa-check"></i> Digital literacy programs</li>
+                        <li><i class="fas fa-check"></i> Coding & AI basics</li>
+                        <li><i class="fas fa-check"></i> Safe internet practices</li>
+                        <li><i class="fas fa-check"></i> Tech-enabled learning</li>
+                    </ul>
                 </div>
-                <div class="schedule-item">
-                  <strong>Benefits:</strong> Fluency, Confidence, Communication skills, Cultural awareness
+
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Holistic Growth</h3>
+                    <p>Physical wellness, emotional intelligence, cultural awareness, and community contribution skills</p>
+                    <ul class="mission-features">
+                        <li><i class="fas fa-check"></i> Physical fitness programs</li>
+                        <li><i class="fas fa-check"></i> Emotional intelligence</li>
+                        <li><i class="fas fa-check"></i> Cultural preservation</li>
+                        <li><i class="fas fa-check"></i> Community service</li>
+                    </ul>
                 </div>
-              </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education 5.0 Framework -->
+    <section class="framework-section" id="framework">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Core System</span>
+                <h2>Education 5.0 Framework</h2>
+                <p class="section-description">
+                    A scientific, integrated model addressing all dimensions of learner development
+                </p>
             </div>
 
-            <div class="component-card">
-              <h4>Emotional & Social Intelligence</h4>
-              <p>Workshops on empathy, conflict resolution, leadership, and community engagement.</p>
-              <div class="schedule">
-                <div class="schedule-item">
-                  <strong>Sessions/Month:</strong> 2 interactive workshops
+            <div class="framework-grid">
+                <!-- Component 1: Universal Life Passport -->
+                <div class="framework-card">
+                    <div class="framework-number">1</div>
+                    <div class="framework-icon">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <h3>Universal Life Passport (ULP)</h3>
+                    <p>Digital lifelong identity tracking learning journey, skills, achievements, and contributions</p>
+                    <ul class="framework-features">
+                        <li><i class="fas fa-shield-alt"></i> Blockchain-based tamper-proof record</li>
+                        <li><i class="fas fa-chart-bar"></i> Multi-dimensional achievement tracking</li>
+                        <li><i class="fas fa-exchange-alt"></i> Portable across schools & employers</li>
+                        <li><i class="fas fa-link"></i> Integration with Aadhaar & DigiLocker</li>
+                    </ul>
+                    <a href="ulp.html" class="framework-link">
+                        Explore More <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
-                <div class="schedule-item">
-                  <strong>Topics:</strong> Empathy, decision-making, relationships, civic responsibility
+
+                <!-- Component 2: Universal Life Certificate -->
+                <div class="framework-card">
+                    <div class="framework-number">2</div>
+                    <div class="framework-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Universal Life Certificate (ULC)</h3>
+                    <p>Living, dynamic certificate that updates with new skills and achievements in real-time</p>
+                    <ul class="framework-features">
+                        <li><i class="fas fa-sync"></i> Auto-updates with skill acquisitions</li>
+                        <li><i class="fas fa-award"></i> Recognized by employers & institutions</li>
+                        <li><i class="fas fa-chart-line"></i> Cumulative learning progression</li>
+                        <li><i class="fas fa-university"></i> Government interoperability ready</li>
+                    </ul>
+                    <a href="ulc.html" class="framework-link">
+                        Explore More <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
-                <div class="schedule-item">
-                  <strong>Benefits:</strong> Better relationships, Resilience, Leadership skills
+
+                <!-- Component 3: Metamorphic Badges -->
+                <div class="framework-card">
+                    <div class="framework-number">3</div>
+                    <div class="framework-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Metamorphic Badges</h3>
+                    <p>Gamified recognition system for skills, achievements, and community contributions with visual progression</p>
+                    <ul class="framework-features">
+                        <li><i class="fas fa-star"></i> 50+ achievement categories</li>
+                        <li><i class="fas fa-tasks"></i> Skill-based & behavioral badges</li>
+                        <li><i class="fas fa-share-alt"></i> Shareable on social platforms</li>
+                        <li><i class="fas fa-fire"></i> Intrinsic motivation through recognition</li>
+                    </ul>
+                    <a href="badges.html" class="framework-link">
+                        Explore More <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
-              </div>
+
+                <!-- Component 4: DAO Village Council -->
+                <div class="framework-card">
+                    <div class="framework-number">4</div>
+                    <div class="framework-icon">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
+                    <h3>DAO Village Council</h3>
+                    <p>Decentralized, community-driven governance with transparent, democratic decision-making</p>
+                    <ul class="framework-features">
+                        <li><i class="fas fa-vote-yea"></i> Smart contract-based decisions</li>
+                        <li><i class="fas fa-hands-helping"></i> Student, parent, teacher voting rights</li>
+                        <li><i class="fas fa-eye"></i> Transparent fund allocation ledger</li>
+                        <li><i class="fas fa-comments"></i> Real-time community participation</li>
+                    </ul>
+                    <a href="dao.html" class="framework-link">
+                        Explore More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Component 5: Universal Holistic Assessment -->
+                <div class="framework-card">
+                    <div class="framework-number">5</div>
+                    <div class="framework-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3>Universal Holistic Assessment (UHA)</h3>
+                    <p>360° evaluation across academics, skills, health, community, and emotional intelligence dimensions</p>
+                    <ul class="framework-features">
+                        <li><i class="fas fa-ruler"></i> Multi-dimensional scoring rubrics</li>
+                        <li><i class="fas fa-tachometer-alt"></i> Real-time progress tracking dashboards</li>
+                        <li><i class="fas fa-medal"></i> Competency-based assessment</li>
+                        <li><i class="fas fa-chart-pie"></i> Parent & learner-visible analytics</li>
+                    </ul>
+                    <a href="uha.html" class="framework-link">
+                        Explore More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Component 6: Research & Innovation Lab -->
+                <div class="framework-card">
+                    <div class="framework-number">6</div>
+                    <div class="framework-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Research & Innovation Lab</h3>
+                    <p>Continuous monitoring, evaluation, and refinement of educational methodologies using data science</p>
+                    <ul class="framework-features">
+                        <li><i class="fas fa-chart-area"></i> Learning outcome analytics</li>
+                        <li><i class="fas fa-lightbulb"></i> Evidence-based curriculum design</li>
+                        <li><i class="fas fa-robot"></i> AI-powered personalization engine</li>
+                        <li><i class="fas fa-file-alt"></i> Publication & peer review process</li>
+                    </ul>
+                    <a href="research.html" class="framework-link">
+                        Explore More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
             </div>
-          </div>
         </div>
+    </section>
 
-        <!-- Digital Tab -->
-        <div class="tab-content" id="digital">
-          <div class="grid cols-2">
-            <div class="component-card">
-              <h4>Digital Literacy Bootcamp</h4>
-              <p>Foundational skills for online learning: safe browsing, document creation, information evaluation, and digital citizenship.</p>
-              <div class="curriculum">
-                <div class="curriculum-item">
-                  <strong>Level 1 (Beginner):</strong> Computer basics, internet safety, email, file management
-                </div>
-                <div class="curriculum-item">
-                  <strong>Level 2 (Intermediate):</strong> Google Docs, Sheets, online research, cybersecurity
-                </div>
-                <div class="curriculum-item">
-                  <strong>Level 3 (Advanced):</strong> Online collaboration, digital citizenship, media literacy
-                </div>
-              </div>
+    <!-- Curriculum Section -->
+    <section class="curriculum-section" id="curriculum">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Learning Programs</span>
+                <h2>Program Components & Curriculum</h2>
+                <p class="section-description">
+                    Comprehensive learning pathways designed for holistic development
+                </p>
             </div>
 
-            <div class="component-card">
-              <h4>Coding Basics</h4>
-              <p>Introduction to computational thinking and programming through Scratch, HTML/CSS, and logic puzzles.</p>
-              <div class="curriculum">
-                <div class="curriculum-item">
-                  <strong>Foundation:</strong> Logic, problem-solving, algorithmic thinking
-                </div>
-                <div class="curriculum-item">
-                  <strong>Practical:</strong> Scratch-based game design, interactive animations
-                </div>
-                <div class="curriculum-item">
-                  <strong>Web:</strong> HTML/CSS basics, responsive design, web development intro
-                </div>
-              </div>
+            <div class="curriculum-tabs">
+                <button class="tab-btn active" data-tab="academic">Academic Programs</button>
+                <button class="tab-btn" data-tab="skills">Life Skills</button>
+                <button class="tab-btn" data-tab="digital">Digital Literacy</button>
+                <button class="tab-btn" data-tab="physical">Physical Wellness</button>
+                <button class="tab-btn" data-tab="community">Community Engagement</button>
             </div>
 
-            <div class="component-card">
-              <h4>Mobile Data Support</h4>
-              <p>Monthly data recharge for accessing online learning platforms, educational resources, and virtual classes.</p>
-              <div class="highlight-box">
-                <strong>🌐 Connectivity Equity:</strong>
-                <p>Every learner receives 2 GB monthly data to ensure equal access to digital resources and online learning tools.</p>
-              </div>
+            <div class="curriculum-content">
+                <!-- Academic Tab -->
+                <div class="tab-content active" id="academic">
+                    <div class="curriculum-grid">
+                        <div class="curriculum-item">
+                            <i class="fas fa-book-reader"></i>
+                            <h4>Core Subjects</h4>
+                            <p>Math, Science, Languages, Social Studies with project-based learning</p>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-pencil-ruler"></i>
+                            <h4>STEM Education</h4>
+                            <p>Hands-on experiments, maker labs, and problem-solving challenges</p>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-palette"></i>
+                            <h4>Arts & Creativity</h4>
+                            <p>Visual arts, music, drama, and creative expression</p>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-language"></i>
+                            <h4>Language Mastery</h4>
+                            <p>English, Hindi, Assamese, Karbi with spoken fluency focus</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills Tab -->
+                <div class="tab-content" id="skills">
+                    <div class="curriculum-grid">
+                        <div class="curriculum-item">
+                            <i class="fas fa-brain"></i>
+                            <h4>Critical Thinking</h4>
+                            <p>Problem-solving, analytical reasoning, and decision-making skills</p>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-comments"></i>
+                            <h4>Communication</h4>
+                            <p>Public speaking, presentation skills, and effective writing</p>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-users"></i>
+                            <h4>Collaboration</h4>
+                            <p>Teamwork, leadership, and conflict resolution abilities</p>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-smile"></i>
+                            <h4>Emotional Intelligence</h4>
+                            <p>Self-awareness, empathy, and relationship management</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Digital Tab -->
+                <div class="tab-content" id="digital">
+                    <div class="curriculum-grid">
+                        <div class="curriculum-item">
+                            <i class="fas fa-laptop-code"></i>
+                            <h4>Computer Fundamentals</h4>
+                            <p>Basic operations, typing, and digital tools usage</p>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-code"></i>
+                            <h4>Coding Basics</h4>
+                            <p>Scratch, Python fundamentals, and computational thinking</p>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Digital Safety</h4>
+                            <p>Online security, privacy, and responsible internet use</p>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-search"></i>
+                            <h4>Information Literacy</h4>
+                            <p>Research skills, fact-checking, and media literacy</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Physical Tab -->
+                <div class="tab-content" id="physical">
+                    <div class="curriculum-grid">
+                        <div class="curriculum-item">
+                            <i class="fas fa-running"></i>
+                            <h4>Sports & Games</h4>
+                            <p>Football, volleyball, athletics, and traditional games</p>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-spa"></i>
+                            <h4>Yoga & Meditation</h4>
+                            <p>Physical postures, breathing exercises, and mindfulness</p>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-fist-raised"></i>
+                            <h4>Self-Defence</h4>
+                            <p>Basic martial arts and personal safety techniques</p>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-heartbeat"></i>
+                            <h4>Health & Nutrition</h4>
+                            <p>Healthy habits, nutrition awareness, and hygiene practices</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Community Tab -->
+                <div class="tab-content" id="community">
+                    <div class="curriculum-grid">
+                        <div class="curriculum-item">
+                            <i class="fas fa-hands-helping"></i>
+                            <h4>Community Service</h4>
+                            <p>Village clean-ups, elder care, and social projects</p>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-seedling"></i>
+                            <h4>Environmental Action</h4>
+                            <p>Tree planting, waste management, and sustainability projects</p>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-landmark"></i>
+                            <h4>Cultural Preservation</h4>
+                            <p>Traditional knowledge, local history, and cultural practices</p>
+                        </div>
+                        <div class="curriculum-item">
+                            <i class="fas fa-handshake"></i>
+                            <h4>Civic Engagement</h4>
+                            <p>Understanding democracy, rights, and community leadership</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Involved Section -->
+    <section class="involved-section" id="get-involved">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Join Us</span>
+                <h2>Get Involved</h2>
+                <p class="section-description">
+                    Be part of the education revolution. Multiple ways to contribute and make an impact
+                </p>
             </div>
 
-            <div class="component-card">
-              <h4>Learning Management System (LMS)</h4>
-              <p>Custom online platform for course content, assignments, progress tracking, and parent-teacher communication.</p>
-              <div class="highlight-box">
-                <strong>📱 Access:</strong>
-                <p>Mobile-first interface, offline-first architecture, works on basic smartphones and tablets.</p>
-              </div>
+            <div class="involved-grid">
+                <div class="involved-card">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3>Become a Mentor</h3>
+                    <p>Share your expertise and guide learners. Flexible hours, meaningful impact</p>
+                    <ul>
+                        <li>Subject teaching</li>
+                        <li>Skill workshops</li>
+                        <li>Career guidance</li>
+                        <li>Life mentorship</li>
+                    </ul>
+                    <a href="#mentor-form" class="btn btn-primary">Apply Now</a>
+                </div>
+
+                <div class="involved-card">
+                    <i class="fas fa-donate"></i>
+                    <h3>Support Financially</h3>
+                    <p>Help us provide quality education to underprivileged students</p>
+                    <ul>
+                        <li>Sponsor a student</li>
+                        <li>Fund infrastructure</li>
+                        <li>Donate learning materials</li>
+                        <li>Support teachers</li>
+                    </ul>
+                    <a href="#donate" class="btn btn-primary">Donate</a>
+                </div>
+
+                <div class="involved-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Contribute Tech</h3>
+                    <p>Help build the Education 5.0 platform and tools</p>
+                    <ul>
+                        <li>Software development</li>
+                        <li>UI/UX design</li>
+                        <li>Blockchain integration</li>
+                        <li>Data analytics</li>
+                    </ul>
+                    <a href="https://github.com/onsnc/onc-education" target="_blank" class="btn btn-primary">Contribute</a>
+                </div>
+
+                <div class="involved-card">
+                    <i class="fas fa-bullhorn"></i>
+                    <h3>Spread the Word</h3>
+                    <p>Help us reach more students and communities</p>
+                    <ul>
+                        <li>Share on social media</li>
+                        <li>Write about us</li>
+                        <li>Organize events</li>
+                        <li>Partner with us</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary">Connect</a>
+                </div>
             </div>
-          </div>
         </div>
+    </section>
 
-        <!-- Wellness Tab -->
-        <div class="tab-content" id="wellness">
-          <div class="grid cols-2">
-            <div class="component-card">
-              <h4>Nutrition & Health</h4>
-              <p>Regular health checkups, nutrition counseling, and meal support for healthy cognitive and physical development.</p>
-              <div class="schedule">
-                <div class="schedule-item">
-                  <strong>Midday Meal:</strong> Daily nutritious meals (included in tuition)
-                </div>
-                <div class="schedule-item">
-                  <strong>Health Camp:</strong> Quarterly medical checkups & vaccinations
-                </div>
-                <div class="schedule-item">
-                  <strong>Counseling:</strong> Nutrition & health awareness sessions
-                </div>
-              </div>
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Connect With Us</span>
+                <h2>Get in Touch</h2>
+                <p class="section-description">
+                    Have questions? Want to collaborate? We'd love to hear from you
+                </p>
             </div>
 
-            <div class="component-card">
-              <h4>Mental Health & Counseling</h4>
-              <p>Confidential counseling services, stress management, and peer support for emotional wellbeing.</p>
-              <div class="schedule">
-                <div class="schedule-item">
-                  <strong>Individual Sessions:</strong> As needed (free)
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Dhuli Moradiring, Karbi Anglong<br>Assam, India - 782441</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:education@onsnc.org">education@onsnc.org</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+91 XXX XXX XXXX</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <div>
+                            <h4>Website</h4>
+                            <p><a href="https://onsnc.org" target="_blank">onsnc.org</a></p>
+                        </div>
+                    </div>
                 </div>
-                <div class="schedule-item">
-                  <strong>Group Workshops:</strong> Monthly wellness circles
+
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ONC Education</h3>
+                    <p>Omniversal Nexus Civilization Education - Building the future of learning through Education 5.0</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/onsnc/onc-education" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
                 </div>
-                <div class="schedule-item">
-                  <strong>Peer Support:</strong> Trained student counselors & mentors
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#mission">Mission</a></li>
+                        <li><a href="#framework">Framework</a></li>
+                        <li><a href="#pilot">Pilot Project</a></li>
+                        <li><a href="#curriculum">Curriculum</a></li>
+                    </ul>
                 </div>
-              </div>
+
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="docs.html">Documentation</a></li>
+                        <li><a href="research.html">Research Papers</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="license.html">Open Source License</a></li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="component-card">
-              <h4>Environmental Stewardship</h4>
-              <p>Practical engagement in plantation, farming, and sustainable living projects with hands-on learning.</p>
-              <div class="schedule">
-                <div class="schedule-item">
-                  <strong>Projects:</strong> Tree plantation, kitchen garden, waste management
-                </div>
-                <div class="schedule-item">
-                  <strong>Frequency:</strong> Bi-weekly community projects
-                </div>
-                <div class="schedule-item">
-                  <strong>Impact:</strong> Environmental awareness + community contribution badges
-                </div>
-              </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ONC Education. Part of <a href="https://onsnc.org" target="_blank">ONSNC Foundation</a>. All rights reserved.</p>
+                <p>Built with ❤️ for learners everywhere | <a href="https://github.com/onsnc/onc-education">Open Source on GitHub</a></p>
             </div>
-
-            <div class="component-card">
-              <h4>Parental Engagement</h4>
-              <p>Regular parent meetings, progress dashboards, and family support programs for holistic child development.</p>
-              <div class="schedule">
-                <div class="schedule-item">
-                  <strong>Meetings:</strong> Monthly parent-teacher conferences
-                </div>
-                <div class="schedule-item">
-                  <strong>Dashboard:</strong> Real-time child progress access via app
-                </div>
-                <div class="schedule-item">
-                  <strong>Support:</strong> Adult education & family counseling programs
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </footer>
 
-  <!-- Transparency & Data -->
-  <section class="section transparency-section">
-    <div class="container">
-      <div class="section-header">
-        <h2>Transparency & Public Accountability</h2>
-        <p>Complete openness in fund management, attendance, and outcomes</p>
-      </div>
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
-      <div class="transparency-grid">
-        <div class="transparency-card">
-          <div class="card-icon">📋</div>
-          <h3>Fee Register</h3>
-          <p>Monthly public ledger of all contributions, concessions, and financial transactions with verifiable receipts.</p>
-          <a href="reports.html" class="link-arrow">View →</a>
-        </div>
-
-        <div class="transparency-card">
-          <div class="card-icon">✅</div>
-          <h3>Attendance Records</h3>
-          <p>Daily attendance tracking, performance analytics, and intervention protocols for consistent learning engagement.</p>
-          <a href="reports.html" class="link-arrow">View →</a>
-        </div>
-
-        <div class="transparency-card">
-          <div class="card-icon">📊</div>
-          <h3>Learning Analytics</h3>
-          <p>Comprehensive assessment data, progress indicators, competency mapping, and outcome visualization.</p>
-          <a href="reports.html" class="link-arrow">View →</a>
-        </div>
-
-        <div class="transparency-card">
-          <div class="card-icon">📸</div>
-          <h3>Evidence & Stories</h3>
-          <p>Monthly photo documentation, student testimonials, community impact stories, and success case studies.</p>
-          <a href="reports.html" class="link-arrow">View →</a>
-        </div>
-
-        <div class="transparency-card">
-          <div class="card-icon">🛠️</div>
-          <h3>Resources Used</h3>
-          <p>Detailed inventory of teaching materials, equipment, technology investments, and infrastructure development.</p>
-          <a href="reports.html" class="link-arrow">View →</a>
-        </div>
-
-        <div class="transparency-card">
-          <div class="card-icon">📈</div>
-          <h3>Impact Metrics</h3>
-          <p>Quarterly reports on KPIs, learning outcomes, skill acquisition rates, and community development indicators.</p>
-          <a href="reports.html" class="link-arrow">View →</a>
-        </div>
-      </div>
-
-      <div class="data-table-wrapper">
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>Metric</th>
-              <th>Current Status</th>
-              <th>Target 2026</th>
-              <th>Progress</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Students Enrolled</strong></td>
-              <td>45</td>
-              <td>150</td>
-              <td><div class="progress-bar"><div class="progress" style="width: 30%"></div></div></td>
-            </tr>
-            <tr>
-              <td><strong>Avg. Attendance Rate</strong></td>
-              <td>87%</td>
-              <td>95%</td>
-              <td><div class="progress-bar"><div class="progress" style="width: 87%"></div></div></td>
-            </tr>
-            <tr>
-              <td><strong>Learning Improvement</strong></td>
-              <td>+23%</td>
-              <td>+50%</td>
-              <td><div class="progress-bar"><div class="progress" style="width: 46%"></div></div></td>
-            </tr>
-            <tr>
-              <td><strong>Digital Skill Acquisition</strong></td>
-              <td>62%</td>
-              <td>100%</td>
-              <td><div class="progress-bar"><div class="progress" style="width: 62%"></div></div></td>
-            </tr>
-            <tr>
-              <td><strong>Community Participation</strong></td>
-              <td>71%</td>
-              <td>100%</td>
-              <td><div class="progress-bar"><div class="progress" style="width: 71%"></div></div></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="cta-secondary">
-        <a class="btn btn-primary" href="reports.html">Open Full Dashboard</a>
-        <a class="btn btn-ghost" href="contact.html">Request Custom Report</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Implementation Roadmap -->
-  <section class="section roadmap-section">
-    <div class="container">
-      <div class="section-header">
-        <h2>3-Year Implementation Roadmap</h2>
-        <p>Strategic phases for scaling from pilot to model education village</p>
-      </div>
-
-      <div class="roadmap-timeline">
-        <div class="timeline-phase">
-          <div class="phase-marker">
-            <div class="phase-dot"></div>
-            <span class="phase-label">Phase 1</span>
-          </div>
-          <div class="phase-content">
-            <h3>Months 1–6: Foundation & Quick Wins</h3>
-            <ul>
-              <li>✓ Implement Metaphormic Badges system (low-cost, high-impact)</li>
-              <li>✓ Begin holistic assessment rubric design & teacher training</li>
-              <li>✓ Launch digital literacy bootcamp (Levels 1–2)</li>
-              <li>✓ Establish public fee register & monthly reporting dashboard</li>
-              <li>✓ Start yoga & self-defence weekly sessions</li>
-              <li>✓ Recruit & train 5 community mentors</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="timeline-phase">
-          <div class="phase-marker">
-            <div class="phase-dot"></div>
-            <span class="phase-label">Phase 2</span>
-          </div>
-          <div class="phase-content">
-            <h3>Months 7–18: Scaling & Digitization</h3>
-            <ul>
-              <li>✓ Issue Universal Life Certificates to completing cohorts</li>
-              <li>✓ Deploy custom Learning Management System (LMS)</li>
-              <li>✓ Integrate Education 5.0 Methodology into full curriculum</li>
-              <li>✓ Pilot DAO Village Council with select decisions</li>
-              <li>✓ Expand to 100+ students across all levels</li>
-              <li>✓ Launch Advanced Coding track (HTML/CSS/Scratch)</li>
-              <li>✓ Establish Research & Innovation Lab for data analysis</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="timeline-phase">
-          <div class="phase-marker">
-            <div class="phase-dot"></div>
-            <span class="phase-label">Phase 3</span>
-          </div>
-          <div class="phase-content">
-            <h3>Months 19–36: Model Village & Impact</h3>
-            <ul>
-              <li>✓ Full blockchain-based Universal Life Passport deployment</li>
-              <li>✓ Scale to 150+ students with multi-village replication</li>
-              <li>✓ Establish DAO Village Council with real governance authority</li>
-              <li>✓ Achieve 95%+ attendance, +50% learning gains</li>
-              <li>✓ Launch youth vocational tracks & job placement partnerships</li>
-              <li>✓ Publish research findings & secure replication funding</li>
-              <li>✓ Become certified "Model Education Village 2026"</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Call to Action -->
-  <section class="section cta-section">
-    <div class="container">
-      <div class="cta-box">
-        <h2>Join the Education Revolution</h2>
-        <p>Be part of building a scalable, evidence-based education model that transforms communities.</p>
-        <div class="cta-buttons">
-          <a class="btn btn-primary" href="volunteer.html">Become a Mentor</a>
-          <a class="btn btn-secondary" href="contact.html">Partner with Us</a>
-          <a class="btn btn-ghost" href="reports.html">View Impact Report</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-content">
-      <div class="footer-section">
-        <h4>ONSNC Foundation</h4>
-        <p>Building sustainable livelihoods and quality education in rural Assam.</p>
-      </div>
-      <div class="footer-section">
-        <h4>Quick Links</h4>
-        <a href="education.html">Education</a>
-        <a href="farming.html">Farming</a>
-        <a href="reports.html">Reports</a>
-        <a href="volunteer.html">Volunteer</a>
-      </div>
-      <div class="footer-section">
-        <h4>Contact</h4>
-        <a href="contact.html">Get in Touch</a>
-        <p class="footer-meta">Dhuli Moradiring, Biswanath, Assam</p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 ONSNC Foundation. All rights reserved. | Empowering Communities for Sustainable Development</p>
-    </div>
-  </footer>
-
-  <!-- Modals for Pillar Details -->
-  <div id="pillarModal" class="modal">
-    <div class="modal-content">
-      <span class="modal-close" onclick="closePillarModal()">&times;</span>
-      <div id="modalBody"></div>
-    </div>
-  </div>
-
-  <script src="../assets/js/main.js"></script>
-  <script src="global-script.js"></script>
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
