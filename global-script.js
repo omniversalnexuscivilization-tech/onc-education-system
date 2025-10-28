@@ -1,18 +1,20 @@
-// ONC Education 5.0 - Updated JavaScript for Header
+// ONC Education 5.0 - Fixed JavaScript for Header
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile Navigation Toggle
+    // Mobile Navigation Toggle - Fixed Version
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
     
     if (navToggle && navMenu) {
         navToggle.addEventListener('click', function() {
+            // Toggle menu visibility
             navMenu.classList.toggle('active');
+            
             // Animate hamburger to X
             const spans = navToggle.querySelectorAll('span');
             if (navMenu.classList.contains('active')) {
-                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
                 spans[1].style.opacity = '0';
-                spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+                spans[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
             } else {
                 spans[0].style.transform = 'none';
                 spans[1].style.opacity = '1';
@@ -24,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Close mobile menu when clicking on a link
     document.querySelectorAll('.nav-menu a').forEach(link => {
         link.addEventListener('click', function() {
-            if (navMenu.classList.contains('active')) {
+            if (navMenu && navMenu.classList.contains('active')) {
                 navMenu.classList.remove('active');
                 const spans = navToggle.querySelectorAll('span');
                 spans[0].style.transform = 'none';
@@ -32,6 +34,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 spans[2].style.transform = 'none';
             }
         });
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (navMenu && navMenu.classList.contains('active')) {
+            const isClickInsideNav = navMenu.contains(event.target);
+            const isClickOnToggle = navToggle.contains(event.target);
+            
+            if (!isClickInsideNav && !isClickOnToggle) {
+                navMenu.classList.remove('active');
+                const spans = navToggle.querySelectorAll('span');
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        }
     });
 
     // Navbar scroll effect
@@ -87,8 +105,57 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Animated counter for statistics
+    const statNumbers = document.querySelectorAll('.stat-number');
+    
+    function animateCounter(element, target, duration = 2000) {
+        let start = 0;
+        const increment = target / (duration / 16); // 60fps
+        
+        const updateCounter = () => {
+            start += increment;
+            if (start < target) {
+                element.textContent = Math.floor(start);
+                requestAnimationFrame(updateCounter);
+            } else {
+                element.textContent = target;
+            }
+        };
+        
+        updateCounter();
+    }
+    
+    // Intersection Observer for counter animation
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.3
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                statNumbers.forEach(stat => {
+                    const target = parseInt(stat.getAttribute('data-target'));
+                    if (!stat.classList.contains('animated')) {
+                        stat.classList.add('animated');
+                        animateCounter(stat, target);
+                    }
+                });
+            }
+        });
+    }, observerOptions);
+    
+    // Observe the hero section for counter animation
+    const heroSection = document.querySelector('.hero');
+    if (heroSection) {
+        observer.observe(heroSection);
+    }
+
     // Rest of your existing JavaScript code...
 });
+
+
 
     // Back to top button
     const backToTopBtn = document.getElementById('backToTop');
