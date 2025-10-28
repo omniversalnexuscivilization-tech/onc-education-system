@@ -49,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(heroSection);
     }
 
+
     // Curriculum tabs
     const tabBtns = document.querySelectorAll('.tab-btn');
     const tabContents = document.querySelectorAll('.tab-content');
@@ -191,4 +192,62 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 100);
     });
 });
+
+
+/* Framework JS helpers - no external deps */
+
+/* 1) Ensure framework links open in a new tab safely if external */
+(function () {
+  document.querySelectorAll('.framework-section .framework-link').forEach(function (a) {
+    try {
+      var url = new URL(a.href, location.href);
+      if (url.origin !== location.origin) {
+        a.setAttribute('rel', 'noopener noreferrer');
+        a.setAttribute('target', '_blank');
+      }
+    } catch (e) {
+      // ignore invalid URLs
+    }
+  });
+})();
+
+/* 2) Keyboard accessibility: allow Enter/Space to activate card when focused */
+(function () {
+  document.querySelectorAll('.framework-section .framework-card').forEach(function (card) {
+    card.setAttribute('tabindex', '0');
+    card.addEventListener('keydown', function (e) {
+      var isActivation = (e.key === 'Enter' || e.key === ' ');
+      if (isActivation) {
+        var link = card.querySelector('.framework-link');
+        if (link) {
+          e.preventDefault();
+          link.click();
+        }
+      }
+    });
+  });
+})();
+
+/* 3) Smooth scroll for in-page framework links that target anchors */
+(function () {
+  document.querySelectorAll('.framework-section a[href^="#"]').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      var id = this.getAttribute('href').slice(1);
+      var target = document.getElementById(id);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        target.focus({ preventScroll: true });
+      }
+    });
+  });
+})();
+
+/* 4) Reduced-motion respect: disable JS animations if user prefers reduced motion */
+(function () {
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    // remove transforms applied by hover styles by adding a helper class
+    document.documentElement.classList.add('reduced-motion');
+  }
+})();
 
