@@ -1,4 +1,4 @@
-// ONC Education 5.0 - Main JavaScript
+// ONC Education 5.0 - Updated JavaScript for Header
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile Navigation Toggle
     const navToggle = document.getElementById('navToggle');
@@ -20,6 +20,19 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', function() {
+            if (navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                const spans = navToggle.querySelectorAll('span');
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+    });
 
     // Navbar scroll effect
     const navbar = document.getElementById('navbar');
@@ -63,6 +76,19 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Donate button functionality
+    const donateBtn = document.querySelector('.donate-btn');
+    if (donateBtn) {
+        donateBtn.addEventListener('click', function() {
+            // You can redirect to a donation page or show a modal
+            alert('Thank you for your interest in donating! We will redirect you to our donation page.');
+            // window.location.href = 'donate.html';
+        });
+    }
+
+    // Rest of your existing JavaScript code...
+});
 
     // Back to top button
     const backToTopBtn = document.getElementById('backToTop');
