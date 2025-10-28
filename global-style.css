@@ -100,9 +100,9 @@ img {
 }
 
 
-    
+
 /* ===================================
-   ONC Education 5.0 - Updated Header & Hero
+   ONC Education 5.0 - Fixed Header & Hero
    =================================== */
 
 /* Updated Header Styles */
@@ -158,6 +158,7 @@ img {
     border: none;
     cursor: pointer;
     padding: 5px;
+    z-index: 1001;
 }
 
 .nav-toggle span {
@@ -165,6 +166,7 @@ img {
     height: 3px;
     background: white;
     transition: var(--transition-fast);
+    transform-origin: center;
 }
 
 .nav-menu {
@@ -213,15 +215,15 @@ img {
     box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
 }
 
-/* Updated Hero Section */
+/* Updated Hero Section with White Background */
 .hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    background: #0a1931; /* Professional dark blue */
-    color: white;
+    background: #ffffff; /* Professional white */
+    color: #2c3e50; /* Dark text for contrast */
     text-align: center;
     padding: 120px 20px 60px;
     overflow: hidden;
@@ -233,7 +235,7 @@ img {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><path d="M0,300 Q300,100 600,300 T1200,300 L1200,600 L0,600 Z" fill="rgba(255,255,255,0.05)"/></svg>') no-repeat bottom;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><path d="M0,300 Q300,100 600,300 T1200,300 L1200,600 L0,600 Z" fill="rgba(102, 126, 234, 0.03)"/></svg>') no-repeat bottom;
     background-size: cover;
     opacity: 0.5;
 }
@@ -248,8 +250,7 @@ img {
     font-size: 3.5rem;
     font-weight: 800;
     margin-bottom: 1rem;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-    background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+    background: linear-gradient(135deg, #2c3e50 0%, #667eea 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -258,16 +259,16 @@ img {
 .hero-subtitle {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    opacity: 0.95;
-    color: #cbd5e0;
+    opacity: 0.9;
+    color: #4a5568;
 }
 
 .hero-description {
     font-size: 1.2rem;
     margin-bottom: 2rem;
-    opacity: 0.9;
+    opacity: 0.8;
     line-height: 1.8;
-    color: #a0aec0;
+    color: #718096;
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
@@ -279,6 +280,56 @@ img {
     justify-content: center;
     flex-wrap: wrap;
     margin-bottom: 3rem;
+}
+
+/* Hero Side Images */
+.hero-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.hero-image-left,
+.hero-image-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    opacity: 0.9;
+}
+
+.hero-image-left {
+    left: 5%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-image-right {
+    right: 5%;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 20px;
 }
 
 /* Updated Button Styles */
@@ -311,13 +362,13 @@ img {
 
 .btn-secondary {
     background: transparent;
-    color: white;
-    border-color: white;
+    color: #8b5cf6;
+    border-color: #8b5cf6;
 }
 
 .btn-secondary:hover {
-    background: white;
-    color: #0a1931;
+    background: #8b5cf6;
+    color: white;
 }
 
 .btn-large {
@@ -326,6 +377,14 @@ img {
 }
 
 /* Mobile Responsive Updates */
+@media (max-width: 1200px) {
+    .hero-image-left,
+    .hero-image-right {
+        width: 250px;
+        height: 350px;
+    }
+}
+
 @media (max-width: 968px) {
     .nav-center {
         display: none;
@@ -351,6 +410,7 @@ img {
         box-shadow: var(--shadow-md);
         transition: var(--transition-fast);
         gap: 0;
+        z-index: 1000;
     }
     
     .nav-menu.active {
@@ -383,6 +443,13 @@ img {
         font-size: 1.2rem;
     }
     
+    .hero-image-left,
+    .hero-image-right {
+        width: 200px;
+        height: 280px;
+        font-size: 1rem;
+    }
+    
     .btn {
         padding: 12px 25px;
         font-size: 0.95rem;
@@ -391,6 +458,16 @@ img {
     .btn-large {
         padding: 14px 30px;
         font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-images {
+        display: none; /* Hide side images on smaller tablets */
+    }
+    
+    .hero {
+        padding: 100px 20px 40px;
     }
 }
 
@@ -440,6 +517,7 @@ img {
         padding: 12px 25px;
     }
 }
+
 
 
 /* Philosophy Section */
