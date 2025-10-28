@@ -887,71 +887,732 @@ section {
 }
 
 
-/* ============ MISSION SECTION ============ */
-.mission-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
+/* Mission Section — refined, scoped to .mission-section to avoid conflicts */
+
+/* Theme variables (local defaults; will not override site-wide if already defined) */
+.mission-section {
+  --ms-bg: #f8fbff;
+  --card-bg: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(248,251,255,0.98));
+  --card-border: rgba(92,40,188,0.12); /* subtle purple */
+  --accent-gradient: linear-gradient(135deg,#6c3ed9 0%,#2fb3d6 100%);
+  --accent-solid: #5b21b6;
+  --muted: #4a5a66;
+  --success: #12b886;
+  --shadow-sm: 0 6px 18px rgba(15,23,42,0.04);
+  --shadow-md: 0 14px 34px rgba(15,23,42,0.06);
+  --shadow-lg: 0 28px 68px rgba(15,23,42,0.10);
+  --radius: 18px;
+  --gap: 28px;
+  background: var(--ms-bg);
+  padding: 3rem 1rem;
+  box-sizing: border-box;
+  font-family: Inter, "Segoe UI", Roboto, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
 }
 
-.mission-card {
-    background: white;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: var(--shadow-md);
-    transition: var(--transition-fast);
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+/* Container */
+.mission-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
 
-.mission-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-lg);
+/* Section header reuse (keeps harmony with other sections) */
+.mission-section .section-header { text-align: center; margin-bottom: 2rem; }
+.mission-section .section-tag {
+  display:inline-block;
+  font-weight:700;
+  color:var(--accent-solid);
+  background:linear-gradient(90deg, rgba(91,33,182,0.06), rgba(47,179,214,0.03));
+  padding: 0.28rem 0.6rem;
+  border-radius:999px;
+  font-size:0.78rem;
 }
 
-.mission-icon {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    background: var(--gradient-primary);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    margin: 0 auto 20px;
+/* Grid layout: responsive, avoids overlap using auto-fit + minmax */
+.mission-section .mission-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--gap);
+  align-items: stretch;
 }
 
-.mission-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    color: var(--dark-color);
+/* Card base: futuristic glass-like surface with soft border and depth */
+.mission-section .mission-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: clamp(20px, 3.2vw, 40px);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--card-border);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: transform 320ms cubic-bezier(.2,.9,.2,1), box-shadow 320ms ease, border-color 320ms ease;
+  text-align: center;
+  min-height: 360px;
+  box-sizing: border-box;
+  isolation: isolate; /* prevents z-index bleed and visual overlap */
 }
 
-.mission-card p {
-    color: var(--text-light);
-    margin-bottom: 20px;
-    line-height: 1.8;
+/* Hover / focus emphasis */
+.mission-section .mission-card:hover,
+.mission-section .mission-card:focus-within {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(91,33,182,0.18);
 }
 
-.mission-features {
-    list-style: none;
-    margin-top: auto;
+/* Icon bubble: gradient ring with inner glass */
+.mission-section .mission-icon {
+  width: 82px;
+  height: 82px;
+  min-width: 82px;
+  min-height: 82px;
+  margin: 0 auto 8px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  display: grid;
+  place-items: center;
+  position: relative;
+  box-shadow: 0 6px 18px rgba(91,33,182,0.08), inset 0 1px 0 rgba(255,255,255,0.35);
+  border: 1px solid rgba(91,33,182,0.06);
 }
 
-.mission-features li {
-    padding: 8px 0;
-    color: var(--text-light);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+/* Accent overlay ring */
+.mission-section .mission-icon::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  padding: 3px;
+  background: conic-gradient(from 120deg, rgba(108,62,217,0.9), rgba(47,179,214,0.85));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.12;
+  pointer-events: none;
 }
 
-.mission-features i {
-    color: var(--success-color);
+/* Icon (font-awesome) styling */
+.mission-section .mission-icon i {
+  font-size: 1.6rem;
+  color: white;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg,#6c3ed9,#2fb3d6);
+  border-radius: 10px;
+  box-shadow: 0 8px 22px rgba(44,20,95,0.16);
 }
 
-/* ============ RESPONSIVE DESIGN ============ */
+/* Headings & copy */
+.mission-section .mission-card h3 {
+  margin: 0;
+  font-size: clamp(1.05rem, 1.8vw, 1.45rem);
+  color: #071022;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.mission-section .mission-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(0.95rem, 1.4vw, 1rem);
+  line-height: 1.6;
+}
+
+/* Features list uses two-column layout on wide screens but stays single column on mobile */
+.mission-section .mission-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+  margin-top: auto;
+  align-content: end;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+/* On larger screens show two columns of features */
+@media (min-width: 900px) {
+  .mission-section .mission-features {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 18px;
+  }
+}
+
+.mission-section .mission-features li {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: var(--muted);
+  justify-content: flex-start;
+  padding: 6px 0;
+  font-size: 0.95rem;
+}
+
+/* Check icon */
+.mission-section .mission-features li i {
+  color: var(--success);
+  font-size: 0.95rem;
+  min-width: 22px;
+  min-height: 22px;
+  display: inline-grid;
+  place-items: center;
+  background: rgba(18,184,134,0.08);
+  border-radius: 6px;
+}
+
+/* Responsive sizing safeguards to avoid overlap */
+@media (max-width: 640px) {
+  .mission-section { padding: 2rem 0.75rem; }
+  .mission-section .mission-card { min-height: auto; padding: 20px; border-radius: 14px; }
+  .mission-section .mission-icon { width: 64px; height: 64px; min-width:64px; min-height:64px; border-radius:14px; }
+  .mission-section .mission-icon i { width: 38px; height:38px; font-size:1.2rem; border-radius:8px; }
+  .mission-section .mission-grid { gap: 18px; }
+}
+
+/* Accessibility: focus states and reduced-motion */
+.mission-section .mission-card:focus-within,
+.mission-section .mission-card a:focus {
+  outline: 3px solid rgba(91,33,182,0.14);
+  outline-offset: 4px;
+  border-radius: 16px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mission-section .mission-card,
+  .mission-section .mission-card * {
+    transition: none !important;
+  }
+}
+
+/* Small utility for tighter text centers inside card when space is constrained */
+.mission-section .mission-card .muted-small {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+/* Ensure icons and text never overflow */
+.mission-section img,
+.mission-section svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* Initiatives Section — scoped to .initiatives-section to avoid conflicts */
+/* Professional, modern card layout with responsive grid, safe spacing, and no overlap */
+
+.initiatives-section {
+  --bg: #ffffff;
+  --container-max: 1200px;
+  --card-radius: 14px;
+  --card-padding: clamp(18px, 2.2vw, 28px);
+  --muted: #41555f;
+  --title-color: #0b1b22;
+  --accent: linear-gradient(90deg,#5b21b6,#2fb3d6);
+  --shadow-sm: 0 8px 22px rgba(8,18,26,0.04);
+  --shadow-lg: 0 24px 56px rgba(8,18,26,0.08);
+  background: var(--bg);
+  color: var(--title-color);
+  padding: clamp(36px, 5vw, 64px) 1rem;
+  box-sizing: border-box;
+  font-family: Inter, "Segoe UI", Roboto, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Container center */
+.initiatives-section .container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+/* Section header alignment consistent with page */
+.initiatives-section .section-header { text-align: center; margin-bottom: 1.6rem; }
+.initiatives-section .section-tag {
+  display:inline-block;
+  font-weight:700;
+  color:#5b21b6;
+  background: rgba(91,33,182,0.06);
+  padding:0.28rem 0.56rem;
+  border-radius:999px;
+  font-size:0.78rem;
+}
+
+/* Grid: responsive, avoids overlap using auto-fit and minmax */
+.initiatives-section .initiatives-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: clamp(18px, 2.4vw, 28px);
+  align-items: start;
+  margin-top: 1.25rem;
+}
+
+/* Card: split image + content; uses CSS grid inside card to keep heights aligned */
+.initiatives-section .initiative-card {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 12px;
+  background: linear-gradient(180deg,#ffffff,#fbfdff);
+  border-radius: var(--card-radius);
+  padding: var(--card-padding);
+  box-sizing: border-box;
+  border: 1px solid rgba(8,18,26,0.04);
+  box-shadow: var(--shadow-sm);
+  260ms cubic-bezier(.2,.9,.2,1), box-shadow 260ms ease, border-color 260ms ease;
+  overflow: hidden;
+  min-height: 360px;
+}
+
+/* Hover/focus */
+.initiatives-section .initiative-card:hover,
+.initiatives-section .initiative-card:focus-within {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(91,33,182,0.10);
+}
+
+/* Image area: fixed aspect ratio box to avoid layout shift and overlap */
+.initiatives-section .initiative-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 10px;
+  background: linear-gradient(180deg,#eef4ff,#ffffff);
+  display: block;
+  border: 1px solid rgba(8,18,26,0.03);
+}
+
+/* Image fill behavior */
+.initiatives-section .initiative-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  vertical-align: middle;
+  transform-origin: center;
+  transition: transform 420ms ease;
+}
+
+/* Subtle image zoom on hover */
+.initiatives-section .initiative-card:hover .initiative-image img {
+  transform: scale(1.04);
+}
+
+/* Content area */
+.initiatives-section .initiative-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 4px;
+}
+
+/* Heading with icon */
+.initiatives-section .initiative-content h3 {
+  margin: 0;
+  font-size: clamp(1.02rem, 1.6vw, 1.15rem);
+  color: var(--title: 700;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  line-height: 1.25;
+}
+
+/* Icon spacing */
+.initiatives-section .initiative-content h3 i {
+  color: #5b21b6;
+  background: rgba(91,33,182,0.06);
+  padding: 6px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  display: inline-grid;
+  place-items: center;
+}
+
+/* Paragraph */
+.initiatives-section .initiative-content p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Learn more link: accent underline and subtle arrow */
+.initiatives-section .initiative-link {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #234a8a;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 10px;
+  width: max-content;
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+/* Link hover */
+.initiatives-section .initiative-link:hover {
+  background: linear-gradient(90deg, rgba(91,33,182,0.06), rgba(47,179,214,0.04));
+  transform: translateY(-3px);
+}
+
+/* CTA centered */
+.initiatives-section .initiatives-cta {
+  margin-top: 22px;
+  text-align: center;
+}
+
+/* Primary button style (if using .btn classes elsewhere, this refines only within this section) */
+.initiatives-section .initiatives-cta .btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-weight: 700;
+  box-shadow: 0 12px 34px rgba(91,33,182,0.12);
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Accessibility: focus outlines */
+.initiatives-section a:focus,
+.initiatives-section .initiative-card:focus-within {
+  outline: 3px solid rgba(91,33,182,0.14);
+  outline-offset: 4px;
+  border-radius: 12px;
+}
+
+/* Responsive adjustments: avoid overlap and ensure readable layout */
+@media (max-width: 880px) {
+  .initiatives-section .initiatives-grid { gap: 18px; }
+  .initiatives-section .initiative-card { min-height: 320px; }
+  .initiatives-section .initiative-image { aspect-ratio: 14 / 9; border-radius: 10px; }
+}
+
+@media (max-width: 560px) {
+  .initiatives-section { padding: 28px 0.75rem; }
+  .initiatives-section .initiative-card { padding: 16px; min-height: auto; }
+  .initiatives-section .initiative-content h3 { font-size: 1rem; }
+  .initiatives-section .initiative-link { font-size: 0.95rem; padding: 8px 10px; }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .initiatives-section .initiative-image img,
+  .initiatives-section .initiative-card,
+  .initiatives-section .initiative-link {
+    transition: none !important;
+  }
+}
+
+
+/* Framework Section - scoped to .framework-section (futuristic, professional, responsive) */
+.framework-section {
+  --bg: linear-gradient(180deg,#0f1020 0%, #0b1330 100%);
+  --card-bg: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  --glass-border: rgba(255,255,255,0.06);
+  --accent-start: #7b3fe3;
+  --accent-end: #23c2d6;
+  --accent-gradient: linear-gradient(90deg,var(--accent-start),var(--accent-end));
+  --muted: rgba(255,255,255,0.85);
+  --muted-2: rgba(255,255,255,0.65);
+  --shadow-sm: 0 8px 30px rgba(2,6,23,0.45);
+  --shadow-lg: 0 28px 78px rgba(2,6,23,0.55);
+  padding: 3.2rem 1rem;
+  background: var(--bg);
+  color: var(--muted);
+  box-sizing: border-box;
+  font-family: Inter, "Segoe UI", Roboto, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Container */
+.framework-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0 1rem;
+}
+
+/* Header styling (keeps readable on dark background) */
+.framework-section .section-header { text-align: center; margin-bottom: 1.8rem; color: var(--muted); }
+.framework-section .section-tag {
+  display:inline-block;
+  font-weight:700;
+  color: #dfe7ff;
+  background: rgba(123,63,227,0.08);
+  padding: 0.28rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+}
+
+/* Grid: balanced across breakpoints, no overlap */
+.framework-section .framework-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(18px, 2.2vw, 28px);
+  align-items: stretch;
+  margin-top: 1.25rem;
+}
+
+/* Card base: glass surface on dark backdrop */
+.framework-section .framework-card {
+  background: var(--card-bg);
+  border-radius: 14px;
+  padding: clamp(18px,2.4vw,28px);
+  box-sizing: border-box;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-sm);
+  transition: transform 300ms cubic-bezier(.2,.9,.2,1), box-shadow 300ms ease, border-color 300ms ease;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Elevation on hover / focus */
+.framework-section .framework-card:hover,
+.framework-section .framework-card:focus-within {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(123,63,227,0.16);
+}
+
+/* Number badge (top-left) */
+.framework-section .framework-number {
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  z-index: 3;
+  font-weight: 900;
+  color: rgba(255,255,255,0.06);
+  font-size: 5.2rem;
+  line-height: 1;
+  pointer-events: none;
+  -webkit-user-select: none;
+  user-select: none;
+  opacity: 0.07;
+  transform: translateZ(0);
+}
+
+/* Icon circular chip (top-right) */
+.framework-section .framework-icon {
+  margin-left: auto;
+  width: 64px;
+  height: 64px;
+  min-width: 64px;
+  min-height: 64px;
+  border-radius: 12px;
+  display: inline-grid;
+  place-items: center;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 8px 26px rgba(2,6,23,0.45), inset 0 1px 0 rgba(255,255,255,0.03);
+  color: #fff;
+}
+
+/* Icon inner symbol styling */
+.framework-section .framework-icon i {
+  font-size: 1.2rem;
+  color: #fff;
+  background: var(--accent-gradient);
+  padding: 10px;
+  border-radius: 8px;
+  display: inline-grid;
+  place-items: center;
+  box-shadow: 0 8px 28px rgba(59,12,110,0.28);
+}
+
+/* Heading and description */
+.framework-section .framework-card h3 {
+  margin: 0;
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  color: #ffffff;
+  z-index: 2;
+  font-weight: 800;
+}
+
+.framework-section .framework-card p {
+  margin: 0;
+  color: var(--muted-2);
+  line-height: 1.6;
+  z-index: 2;
+  font-size: 0.98rem;
+}
+
+/* Features list: compact, two-column on wide screens, single on small */
+.framework-section .framework-features {
+  list-style: none;
+  padding: 0;
+  margin: 0.6rem 0 0;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 1fr;
+  align-content: start;
+  z-index: 2;
+}
+
+/* Two-column from medium width */
+@media (min-width: 900px) {
+  .framework-section .framework-features {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 18px;
+  }
+}
+
+/* Feature item visuals */
+.framework-section .framework-features li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  color: var(--muted-2);
+  font-size: 0.95rem;
+}
+
+/* Feature icon */
+.framework-section .framework-features li i {
+  color: var(--accent-start);
+  min-width: 22px;
+  display: inline-grid;
+  place-items: center;
+  font-size: 0.95rem;
+  background: rgba(123,63,227,0.08);
+  border-radius: 6px;
+  padding: 4px;
+}
+
+/* Link CTA at card bottom */
+.framework-section .framework-link {
+  margin-top: auto;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  color: #eaf6ff;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, rgba(123,63,227,0.12), rgba(35,194,214,0.06));
+  border: 1px solid rgba(255,255,255,0.03);
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+/* Link hover */
+.framework-section .framework-link:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 42px rgba(2,6,23,0.45);
+  background: linear-gradient(90deg, rgba(123,63,227,0.18), rgba(35,194,214,0.12));
+}
+
+/* Accessibility focus outlines */
+.framework-section .framework-card:focus-within,
+.framework-section a:focus {
+  outline: 3px solid rgba(123,63,227,0.14);
+  outline-offset: 4px;
+  border-radius: 12px;
+}
+
+/* Responsive adjustments to avoid overlap and ensure readable layout */
+@media (max-width: 980px) {
+  .framework-section { padding: 2.4rem 0.8rem; }
+  .framework-section .framework-card { min-height: 380px; padding: 18px; border-radius: 12px; }
+  .framework-section .framework-number { left: 12px; top: 12px; font-size: 4.4rem; opacity: 0.08; }
+  .framework-section .framework-icon { width: 56px; height: 56px; }
+}
+
+/* Small screens: stack content comfortably and ensure no overflow */
+@media (max-width: 560px) {
+  .framework-section .framework-grid { gap: 14px; }
+  .framework-section .framework-card { min-height: auto; padding: 14px; display: flex; flex-direction: column; }
+  .framework-section .framework-number { display:none; } /* hide oversized background number on very small screens to save space */
+  .framework-section .framework-icon { margin-left: 0; align-self: flex-start; }
+  .framework-section .framework-features { grid-template-columns: 1fr; gap: 8px; }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .framework-section .framework-card,
+  .framework-section .framework-link,
+  .framework-section .initiative-image img {
+    transition: none !important;
+  }
+}
+
+/* Ensure images/icons never overflow cards */
+.framework-section img,
+.framework-section svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* Framework Section — finishing touches and utility fallbacks */
+
+/* Fallback variables for older browsers */
+.framework-section {
+  --accent-start: #7b3fe3;
+  --accent-end: #23c2d6;
+  --glass-border: rgba(255,255,255,0.06);
+}
+
+/* Ensure consistent box-sizing across framework elements only */
+.framework-section *, .framework-section *::before, .framework-section *::after {
+  box-sizing: border-box;
+}
+
+/* Tighten typography rhythm for small screens */
+@media (max-width: 420px) {
+  .framework-section .section-header h2 { font-size: 1.25rem; }
+  .framework-section .framework-card h3 { font-size: 1rem; }
+  .framework-section .framework-card p { font-size: 0.92rem; }
+}
+
+/* Prevent text wrap issues inside feature list items */
+.framework-section .framework-features li {
+  word-break: break-word;
+  hyphens: auto;
+}
+
+/* Keep interactive CTAs visible on small viewport heights */
+@media (max-height: 520px) {
+  .framework-section .framework-card { min-height: 320px; }
+  .framework-section .framework-grid { gap: 14px; }
+}
+
+/* Visual focus ring refinement for keyboard users */
+.framework-section a:focus-visible,
+.framework-section button:focus-visible,
+.framework-section .framework-card:focus-within {
+  outline: 3px solid rgba(123,63,227,0.18);
+  outline-offset: 4px;
+  border-radius: 10px;
+}
+
+/* Small helper: clamp card content so bottom link never overlaps features */
+.framework-section .framework-card > .framework-features + .framework-link,
+.framework-section .framework-card > .framework-features + .framework-link:empty {
+  margin-top: 12px;
+}
+
+/* Print-safe fallback (makes cards stack vertically for print) */
+@media print {
+  .framework-section { background: #fff; color: #000; }
+  .framework-section .framework-grid { grid-template-columns: 1fr !important; gap: 8px !important; }
+  .framework-section .framework-card { box-shadow: none; border: 1px solid #ddd; background: #fff; color: #000; }
+  .framework-section .framework-number { display:none; }
+                                         }
+
+
    
