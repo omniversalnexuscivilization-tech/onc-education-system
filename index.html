@@ -47,62 +47,86 @@
         </div>
     </nav>
 
-    <!-- Updated Hero Section with White Background and Side Images -->
-    <section class="hero" id="home">
-        <div class="hero-overlay"></div>
-        
-        <!-- Side Images -->
-        <div class="hero-images">
-            <div class="hero-image-left">
-                <!-- AI Mentor Image -->
-                <div class="image-placeholder">
-                    <i class="fas fa-robot" style="font-size: 3rem; margin-bottom: 15px;"></i>
-                    <p>AI Mentor with Students<br>Hands-on Project Experiment<br>in Pod Lab</p>
-                </div>
-            </div>
-            
-            <div class="hero-image-right">
-                <!-- Humanoid Facilitator Image -->
-                <div class="image-placeholder">
-                    <i class="fas fa-vr-cardboard" style="font-size: 3rem; margin-bottom: 15px;"></i>
-                    <p>Humanoid Facilitator with Students<br>Learning AR/VR Mode<br>in Classroom</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="hero-content">
-            <h1 class="hero-title animate-fade-in">Education 5.0</h1>
-            <p class="hero-subtitle animate-fade-in-delay">Universal InnovaSphere Education for Nexus Civilization 3.0</p>
-            <p class="hero-description animate-fade-in-delay-2">
-                A scientific, inclusive, and innovative education ecosystem combining academic excellence with life skills, digital competence, and community engagement
-            </p>
-            <div class="hero-buttons animate-fade-in-delay-3">
-                <a href="#pilot" class="btn btn-primary btn-large">
-                    <i class="fas fa-rocket"></i> View Pilot Project
-                </a>
-                <a href="#framework" class="btn btn-secondary btn-large">
-                    <i class="fas fa-book"></i> Explore Framework
-                </a>
-            </div>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <span class="stat-number" data-target="45">0</span>
-                    <span class="stat-label">Students Enrolled</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-target="6">0</span>
-                    <span class="stat-label">Core Components</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-target="2026">2025</span>
-                    <span class="stat-label">Model Village Goal</span>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <i class="fas fa-chevron-down"></i>
-        </div>
-    </section>
+<!-- Hero section with left and right images (replace the src URLs with your own assets if preferred) -->
+<section class="hero" id="home">
+  <div class="hero-overlay"></div>
+
+  <!-- Side Images -->
+  <div class="hero-images" aria-hidden="false" role="group" aria-label="Hero illustrative images">
+    <div class="hero-image-left">
+      <figure class="image-placeholder" role="img" aria-label="AI Mentor with students in pod lab">
+        <img
+          src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1"
+          srcset="
+            https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=480&auto=format&fit=crop&ixlib=rb-4.0.3&s=1 480w,
+            https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=1 800w,
+            https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1 1200w
+          "
+          sizes="(max-width: 680px) 92vw, (max-width:980px) 46vw, 40vw"
+          alt="AI mentor guiding students in a small lab; hands-on project experiment"
+          loading="lazy"
+          style="width:100%;height:auto;border-radius:8px;display:block;object-fit:cover;"
+        />
+        <figcaption style="margin-top:0.6rem;color:inherit;font-size:0.92rem;line-height:1.25;">
+          AI Mentor with Students — Hands-on Pod Lab
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="hero-image-right">
+      <figure class="image-placeholder" role="img" aria-label="Humanoid facilitator with students learning AR VR">
+        <img
+          src="https://images.unsplash.com/photo-1581093588401-9e2b9b1b3f7b?q=80&w=1200&auto=format&fit=crop&ixlib= srcset="
+            https://images.unsplash.com/photo-1581093588401-9e2b9b1b3f7b?q=80&w=480&auto=format&fit=crop&ixlib=rb-4.0.3&s=2 480w,
+            https://images.unsplash.com/photo-1581093588401-9e2b9b1b3f7b?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=2 800w,
+            https://images.unsplash.com/photo-1581093588401-9e2b9b1b3f7b?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=2 1200w
+          "
+          sizes="(max-width: 680px) 92vw, (max-width:980px) 46vw, 40vw"
+          alt="Humanoid facilitator demonstrating AR/VR to students in a classroom"
+          loading="lazy"
+          style="width:100%;height:auto;border-radius:8px;display:block;object-fit:cover;"
+        />
+        <figcaption style="margin-top:0.6rem;color:inherit;font-size:0.92rem;line-height:1.25;">
+          Humanoid Facilitator with Students — AR/VR Classroom
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="hero-content">
+    <h1 class="hero-title animate-fade-in">Education 5.0</h1>
+    <p class="hero-subtitle animate-fade-in-delay">Universal InnovaSphere Education for Nexus Civilization 3.0</p>
+    <p class="hero-description animate-fade-in-delay-2">
+      A scientific, inclusive, and innovative education ecosystem combining academic excellence with life skills, digital competence, and community engagement
+    </p>
+    <div class="hero-buttons animate-fade-in-delay-3">
+      <a href="#pilot" class="btn btn-primary btn-large">
+        <i class="fas fa-rocket" aria-hidden="true"></i> View Pilot Project
+      </a>
+      <a href="#framework" class="btn btn-secondary btn-large">
+        <i class="fas fa-book" aria-hidden="true"></i> Explore Framework
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-number" data-target="45">0</span>
+        <span class="stat-label">Students Enrolled</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="6">0</span>
+        <span class="stat-label">Core Components</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="2026">2025</span>
+        <span class="stat-label">Model Village Goal</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-indicator" aria-hidden="true">
+    <i class="fas fa-chevron-down"></i>
+  </div>
+</section>
 
     
     <!-- Philosophy & Science Section -->
