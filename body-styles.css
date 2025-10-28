@@ -559,6 +559,283 @@ section {
 }
 
 
+/* Vision Section - isolated styles (scoped to .vision-section) */
+.vision-section {
+  background: #ffffff;
+  color: #0f1720;
+  padding: 3rem 1rem;
+  box-sizing: border-box;
+  font-family: Inter, "Segoe UI", Roboto, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Container centering and max width */
+.vision-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+/* Header */
+.vision-section .section-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.vision-section .section-tag {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 0.78rem;
+  color: #5b21b6;
+  background: rgba(91,33,182,0.06);
+  padding: 0.28rem 0.6rem;
+  border-radius: 999px;
+}
+
+.vision-section h2 {
+  margin: 0.5rem 0 0;
+  font-size: clamp(1.4rem, 2.6vw, 2rem);
+  line-height: 1.08;
+  color: #08121a;
+  font-weight: 700;
+}
+
+.vision-section .section-description {
+  margin: 0.6rem auto 0;
+  max-width: 64ch;
+  color: #354b53;
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+/* Vision content layout: main left (image + text) and goals right on wide screens */
+.vision-section .vision-content {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 1.25rem;
+  align-items: start;
+  margin-top: 1.75rem;
+}
+
+/* Main area inside vision-content */
+.vision-section .vision-main {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+/* Vision image container */
+.vision-section .vision-image {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(180deg,#f7f8fb,#ffffff);
+  border: 1px solid rgba(8,18,26,0.04);
+  box-shadow: 0 8px 26px rgba(8,18,26,0.04);
+}
+
+/* Responsive image behavior */
+.vision-section .vision-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+/* Vision text */
+.vision-section .vision-text {
+  padding: 0.25rem 0;
+}
+
+.vision-section .vision-text h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.1rem;
+  color: #08121a;
+  font-weight: 700;
+}
+
+.vision-section .vision-text p {
+  margin: 0 0 0.6rem;
+  color: #344955;
+  font-size: 0.96rem;
+  line-height: 1.55;
+}
+
+/* Vision list */
+.vision-section .vision-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.vision-section .vision-list li {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  color: #24323a;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Icon in list */
+.vision-section .vision-list li i {
+  min-width: 28px;
+  height: 28px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 6px;
+  color: #5b21b6;
+  background: rgba(91,33,182,0.06);
+  font-size: 0.95rem;
+  margin-top: 3px;
+}
+
+/* Goals column */
+.vision-section .vision-goals {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.vision-section .vision-goal-card {
+  background: linear-gradient(180deg,#ffffff,#fbfbfd);
+  border-radius: 12px;
+  padding: 0.95rem;
+  border: 1px solid rgba(8,18,26,0.05);
+  box-shadow: 0 10px 30px rgba(8,18,26,0.04);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+/* Year badge */
+.vision-section .vision-goal-card .goal-year {
+  display: inline-block;
+  font-weight: 800;
+  color: #fff;
+  background: linear-gradient(90deg,#5b21b6,#7b3fe3);
+  padding: 0.28rem 0.6rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+/* Goal heading & paragraph */
+.vision-section .vision-goal-card h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: #08121a;
+  font-weight: 700;
+}
+
+.vision-section .vision-goal-card p {
+  margin: 0;
+  color: #344955;
+  font-size: 0.94rem;
+  line-height: 1.45;
+}
+
+/* Goal hover */
+.vision-section .vision-goal-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 44px rgba(8,18,26,0.07);
+  border-color: rgba(91,33,182,0.08);
+}
+
+/* CTA */
+.vision-section .vision-cta {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.vision-section .vision-cta .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.64rem 1rem;
+  border-radius: 10px;
+  background: transparent;
+  border: 1.5px solid rgba(8,18,26,0.08);
+  color: #08121a;
+  font-weight: 700;
+}
+
+/* Accessibility: ensure focus outlines */
+.vision-section a:focus,
+.vision-section button:focus,
+.vision-section .vision-goal-card:focus {
+  outline: 3px solid rgba(91,33,182,0.18);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+
+/* Responsive: tablet */
+@media (max-width: 980px) {
+  .vision-section .vision-content {
+    grid-template-columns: 1fr 320px;
+  }
+  .vision-section .vision-main {
+    grid-template-columns: 360px 1fr;
+  }
+  .vision-section .vision-image { max-width: 360px; }
+}
+
+/* Responsive: small tablet / large phone */
+@media (max-width: 760px) {
+  .vision-section .vision-content {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .vision-section .vision-main {
+    grid-template-columns: 1fr;
+  }
+
+  .vision-section .vision-image {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .vision-section .vision-text {
+    padding-top: 0.6rem;
+  }
+
+  .vision-section .vision-goals {
+    flex-direction: row;
+    gap: 0.75rem;
+    overflow: auto;
+    padding-bottom: 0.25rem;
+  }
+
+  .vision-section .vision-goal-card {
+    min-width: 260px;
+    flex: 0 0 260px;
+  }
+}
+
+/* Responsive: mobile */
+@media (max-width: 420px) {
+  .vision-section {
+    padding: 1.6rem 0.75rem;
+  }
+
+  .vision-section .vision-goal-card { min-width: 220px; flex: 0 0 220px; }
+  .vision-section .vision-list li { font-size: 0.92rem; gap: 0.5rem; }
+  .vision-section .vision-list li i { min-width: 26px; height: 26px; font-size: 0.85rem; }
+}
+
+
+
+
+
+
+
+
 /* ============ PILOT SECTION ============ */
 .pilot-section {
     background: #e8f4f8; /* Professional light blue */
