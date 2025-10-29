@@ -194,6 +194,236 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+// Education 5.0 Framework Interactive Features
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // Smooth scroll for framework links
+    const frameworkLinks = document.querySelectorAll('.framework-link');
+    
+    frameworkLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Add click animation
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 150);
+        });
+    });
+
+    // Card hover effect with tilt
+    const frameworkCards = document.querySelectorAll('.framework-card');
+    
+    frameworkCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.zIndex = '10';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.zIndex = '1';
+        });
+
+        // Parallax effect on mouse move
+        card.addEventListener('mousemove', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = (y - centerY) / 20;
+            const rotateY = (centerX - x) / 20;
+            
+            this.style.transform = `translateY(-10px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = '';
+        });
+    });
+
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                
+                // Animate counter numbers
+                const number = entry.target.querySelector('.framework-number');
+                if (number) {
+                    animateNumber(number);
+                }
+            }
+        });
+    }, observerOptions);
+
+    frameworkCards.forEach(card => {
+        observer.observe(card);
+    });
+
+    // Animate numbers
+    function animateNumber(element) {
+        const target = parseInt(element.textContent);
+        const duration = 1000;
+        const start = 0;
+        const increment = target / (duration / 16);
+        let current = start;
+
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                element.textContent = target;
+                clearInterval(timer);
+            } else {
+                element.textContent = Math.floor(current);
+            }
+        }, 16);
+    }
+
+    // Add ripple effect on card click
+    frameworkCards.forEach(card => {
+        card.addEventListener('click', function(e) {
+            const ripple = document.createElement('div');
+            ripple.classList.add('ripple');
+            
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+            
+            ripple.style.width = ripple.style.height = size + 'px';
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+            
+            this.appendChild(ripple);
+            
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        });
+    });
+
+    // Feature list animation on hover
+    const featureLists = document.querySelectorAll('.framework-features');
+    
+    featureLists.forEach(list => {
+        const items = list.querySelectorAll('li');
+        
+        list.parentElement.addEventListener('mouseenter', function() {
+            items.forEach((item, index) => {
+                setTimeout(() => {
+                    item.style.transform = 'translateX(5px)';
+                    item.style.transition = 'transform 0.3s ease';
+                }, index * 50);
+            });
+        });
+        
+        list.parentElement.addEventListener('mouseleave', function() {
+            items.forEach(item => {
+                item.style.transform = 'translateX(0)';
+            });
+        });
+    });
+
+    // Add particle effect on section
+    createParticles();
+    
+    function createParticles() {
+        const section = document.querySelector('.framework-section');
+        const particleCount = 20;
+        
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.cssText = `
+                position: absolute;
+                width: ${Math.random() * 4 + 2}px;
+                height: ${Math.random() * 4 + 2}px;
+                background: radial-gradient(circle, rgba(59, 130, 246, 0.3), transparent);
+                border-radius: 50%;
+                left: ${Math.random() * 100}%;
+                top: ${Math.random() * 100}%;
+                animation: float ${Math.random() * 10 + 10}s infinite ease-in-out;
+                animation-delay: ${Math.random() * 5}s;
+                pointer-events: none;
+            `;
+            section.appendChild(particle);
+        }
+    }
+
+    // Add CSS animation for particles
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) rotate(0deg);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            25% {
+                transform: translate(100px, -100px) rotate(180deg);
+            }
+            75% {
+                transform: translate(-100px, 100px) rotate(-180deg);
+            }
+        }
+        
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            pointer-events: none;
+            animation: ripple-animation 0.6s ease-out;
+        }
+        
+        @keyframes ripple-animation {
+            to {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Scroll progress indicator for framework section
+    window.addEventListener('scroll', function() {
+        const section = document.querySelector('.framework-section');
+        const rect = section.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        
+        if (rect.top < windowHeight && rect.bottom > 0) {
+            const progress = (windowHeight - rect.top) / (windowHeight + rect.height);
+            section.style.setProperty('--scroll-progress', progress);
+        }
+    });
+
+    // Add tooltip on feature items
+    const featureItems = document.querySelectorAll('.framework-features li');
+    
+    featureItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            this.style.backgroundColor = 'rgba(0, 0, 0, 0.02)';
+            this.style.padding = '8px';
+            this.style.borderRadius = '8px';
+            this.style.transition = 'all 0.3s ease';
+        });
+        
+        item.addEventListener('mouseleave', function() {
+            this.style.backgroundColor = 'transparent';
+            this.style.padding = '0';
+        });
+    });
+
+    console.log('Education 5.0 Framework initialized successfully! 🚀');
+});
+
 /* Framework JS helpers - no external deps */
 
 /* 1) Ensure framework links open in a new tab safely if external */
